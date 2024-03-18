@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['empty chair', 'occupiedchair']
+
+roboflow:
+  workspace: abhi-chimpanna-h0r39
+  project: sec-9dnnz
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/abhi-chimpanna-h0r39/sec-9dnnz/dataset/5
