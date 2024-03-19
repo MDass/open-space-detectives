@@ -35,4 +35,4 @@ Open Space Detectives was created by Michelle Liu and Megan Dass, which was the 
 The software is available under the [MIT License](https://github.com/poloclub/skeletricks/blob/main/LICENSE).
 
 ## Contact
-If you have any questions, feel free to [open an issue](https://github.com/MDass/llm_case_law/issues/new) or contact [Megan Dass](mailto:mdass9@stanford.edu) or [Shruti Verma](mailto:shrutive@stanford.edu).
+If you have any questions, feel free to [open an issue](https://github.com/MDass/llm_case_law/issues/new) or contact [Megan Dass](mailto:mdass9@stanford.edu) or [Michelle Liu](mailto:micheliu@stanford.edu).
