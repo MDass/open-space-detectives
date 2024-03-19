@@ -1,29 +1,17 @@
 # Adapted from: https://github.com/shu-nya/Object-Detection-using-YOLOv8-on-Custom-Dataset/blob/main/Object_Detection_using_YOLOv8_model_on_Custom_Guitar_Dataset.ipynb
 
 import matplotlib.pyplot as plt
+import cv2
 
 # Function to convert bounding boxes in YOLO format to x_min, y_min, x_max, y_max.
 
 def yolo2bbox(bboxes):
-    """
-    Argument: bboxes
-    The function takes bboxes as input containing the YOLO bounding box coordinates.
-    It then calculates the (xmin, ymin) and (xmax, ymax) coordinates of the bounding box.
-    Returns the coordinates: xmin, ymin, xmax, ymax
-    """
 
     xmin, ymin = bboxes[0]-bboxes[2]/2, bboxes[1]-bboxes[3]/2
     xmax, ymax = bboxes[0]+bboxes[2]/2, bboxes[1]+bboxes[3]/2
     return xmin, ymin, xmax, ymax
 
 def plot_box(image, bboxes, labels):
-    """
-    Arguments:  image - an input image,
-                bboxes - a list of bounding boxes in YOLO format,
-                labels - a list of labels corresponding to each bounding box.
-    The function plots the bounding boxes on the image using OpenCV (cv2).
-    Returns the modified image.
-    """
 
     print(len(bboxes))
     print(len(labels))
@@ -48,7 +36,6 @@ def plot_box(image, bboxes, labels):
         image = cv2.rectangle(
             image,
             (xmin, ymin), (xmax, ymax),
-            #  color (0, 0, 255) -> red
             color=(0, 0, 255) if labels[box_num] == "1" else (255, 0, 0),
             thickness=thickness
         )
@@ -96,7 +83,7 @@ def plot(image_path, label_path, num_samples):
     plt.show()
 
 plot(
-    image_path='/Users/megandass/Documents/quarter 2/open-space-detectives/datasets/sec.v5i.yolov8_mod/test/images/frame232_jpg.rf.2491bca71662a7422e27f919ecc334f7.jpg',
-    label_path='/Users/megandass/Documents/quarter 2/open-space-detectives/datasets/sec.v5i.yolov8_mod/test/labels/frame232_jpg.rf.2491bca71662a7422e27f919ecc334f7.txt',
+    image_path='datasets/sec.v5i.yolov8_mod/test/images/frame232_jpg.rf.2491bca71662a7422e27f919ecc334f7.jpg',
+    label_path='datasets/sec.v5i.yolov8_mod/test/labels/frame232_jpg.rf.2491bca71662a7422e27f919ecc334f7.txt',
     num_samples=1,
 )
