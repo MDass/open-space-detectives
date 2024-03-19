@@ -1,3 +1,4 @@
+# Adapted from: https://github.com/shu-nya/Object-Detection-using-YOLOv8-on-Custom-Dataset/blob/main/Object_Detection_using_YOLOv8_model_on_Custom_Guitar_Dataset.ipynb
 
 import matplotlib.pyplot as plt
 import cv2
@@ -55,13 +56,6 @@ def calculate_box_area(box):
     return area
 
 def plot_box(image, bboxes, labels):
-    """
-    Arguments:  image - an input image,
-                bboxes - a list of bounding boxes in YOLO format,
-                labels - a list of labels corresponding to each bounding box.
-    The function plots the bounding boxes on the image using OpenCV (cv2).
-    Returns the modified image.
-    """
 
     print(len(bboxes))
     print(len(labels))
@@ -129,10 +123,9 @@ for chair in chairs:
     if continue_chair:
         labels.append("0")
     
-result_image = plot_box(image, chairs, labels)  # call the plot_box function to draw the bounding boxes and labels on the image.
+result_image = plot_box(image, chairs, labels)
 plt.subplot(2, 2, 1)
-plt.imshow(result_image[:, :, ::-1])    # reverse the order of color channels. OpenCV uses BGR color order. Matplotlib uses RGB color order.
-plt.axis('off')
+plt.imshow(result_image[:, :, ::-1])
 plt.subplots_adjust(wspace=1)
 plt.tight_layout()
 plt.show()
